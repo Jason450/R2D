@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     [Header("Graphics")]
     public Animator anim;
     [Header("Bools")]
-    public bool isRunning;
+    //public bool isRunning;
     public bool canJump;
     public bool isJumping;
     [Header("Forces")]
@@ -41,15 +41,16 @@ public class PlayerScript : MonoBehaviour
             canJump = true;
             anim.SetBool("IsJumping", false);
         }
+        else canJump = false;
     }
 
-        void Jump()
+    void Jump()
     {
         isJumping = true;
         anim.SetBool("IsJumping", true);
     }
 
-    public void JumpStart() //Decidir como será el salto
+    public void JumpStart()
     {
         if (!canJump) return;
 
