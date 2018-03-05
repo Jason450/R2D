@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    public float speed;
+    public int score;
+    public UIScript UI;
 
 	void Start ()
     {
@@ -13,11 +14,6 @@ public class EnemyScript : MonoBehaviour
 	
 	void Update ()
     {
-		
+        UI.UpdateScore(score);
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-    }
 }
