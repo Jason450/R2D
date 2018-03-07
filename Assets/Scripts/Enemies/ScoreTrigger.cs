@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ScoreTrigger : MonoBehaviour
 {
-    public LevelManager lvlManager;
+    public int scoreValue = 10;
+    public ScoreScript scoreScript;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        lvlManager.score += 10;
+        scoreScript.UpdateScore(scoreValue);
     }
 }

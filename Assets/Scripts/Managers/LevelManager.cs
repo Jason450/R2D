@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int score;
-    public UIScript UI;
+    public ScoreScript scoreScript;
+    public PlayerScript player;
+    public EnemyScript enemy;
+    public int maxScore;
+    public bool lvlEnded = false;
 
 	void Start ()
     {
@@ -14,6 +17,10 @@ public class LevelManager : MonoBehaviour
 	
 	void Update ()
     {
-        UI.UpdateScore(score);
+        //scoreScript.UpdateScore(maxScore);
+        if(lvlEnded)
+        {
+            //player.
+        }
 	}
 }

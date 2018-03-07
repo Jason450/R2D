@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
 
 	void Start ()
     {
-        enemyPos = new Vector2(enemy.position.x, enemy.position.y);
+        enemyPos = new Vector2(10, enemy.position.y);
 	}
 	
 	void Update ()
@@ -24,5 +24,10 @@ public class EnemyScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+    }
+
+    public void Reset()
+    {
+        enemyPos = new Vector2(10, enemy.position.y);
     }
 }

@@ -10,7 +10,6 @@ public class PlayerScript : MonoBehaviour
     [Header("Graphics")]
     public Animator anim;
     [Header("Bools")]
-    //public bool isRunning;
     public bool canJump;
     public bool isJumping;
     [Header("Forces")]
