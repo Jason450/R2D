@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [Header("Other Scripts")]
+    public PlayerScript player;
+    [Header("Stats")]
     public float speed;
+    public int damage = 1;
+    [Header("Physics")]
     public Transform enemy;
     private Vector2 enemyPos;
 
@@ -15,6 +20,7 @@ public class EnemyScript : MonoBehaviour
 	
 	void Update ()
     {
+        //speed += 0.1f * Time.deltaTime;
         enemyPos.x -= speed * Time.deltaTime;
         enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
 
@@ -23,7 +29,8 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        player.RecieveDamage(damage);
+        Reset();
     }
 
     public void Reset()

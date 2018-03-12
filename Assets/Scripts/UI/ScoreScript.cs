@@ -36,4 +36,9 @@ public class ScoreScript : MonoBehaviour
     {
         maxScore = _maxScore;
     }
+
+    public void Reset()
+    {
+        score = 0;
+    }
 }

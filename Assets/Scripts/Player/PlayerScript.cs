@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    [Header("Other Scripts")]
+    public LevelManager lvlManager;
+    [Header("Stats")]
+    public int life;
     [Header("Physics")]
     public PlayerCollisions collisions;
     public Rigidbody2D rb;
@@ -17,12 +21,15 @@ public class PlayerScript : MonoBehaviour
 
 	void Start ()
     {
-
+        life = 1;
 	}
 	
 	void Update ()
     {
-        
+        if (life <= 0)
+        {
+            lvlManager.FinishLevel();
+        }
     }
 
     private void FixedUpdate()
@@ -57,5 +64,10 @@ public class PlayerScript : MonoBehaviour
         {
             Jump();
         }
+    }
+
+    public void RecieveDamage(int damage)
+    {
+        life -= damage;
     }
 }
