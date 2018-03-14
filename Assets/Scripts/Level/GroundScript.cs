@@ -15,11 +15,13 @@ public class GroundScript : MonoBehaviour
 	
 	void Update ()
     {
-        //scrollSpeed += 0.1f * Time.deltaTime;
+        scrollSpeed += 0.1f * Time.deltaTime;
 
         if (offSet.x >= 1) offSet.x = 0;
 
         offSet.x += scrollSpeed * Time.deltaTime;
         spriteRend.material.mainTextureOffset = offSet;
+
+        if (scrollSpeed >= 15) scrollSpeed = 15;
 	}
 }
