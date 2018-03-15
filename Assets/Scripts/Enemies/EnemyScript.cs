@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour
     [Header("Other Scripts")]
     public PlayerScript player;
     [Header("Stats")]
+    public bool canMove;
     public float speed;
     public int damage = 1;
     [Header("Physics")]
@@ -20,11 +21,18 @@ public class EnemyScript : MonoBehaviour
 	
 	void Update ()
     {
-        speed += 0.1f * Time.deltaTime;
-        enemyPos.x -= speed * Time.deltaTime;
-        enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
+        if (canMove)
+        {
+            speed += 0.1f * Time.deltaTime;
+            enemyPos.x -= speed * Time.deltaTime;
+            enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
+        }
 
-        if (enemyPos.x <= -10) enemyPos.x = Random.Range(10, 15);
+        if (enemyPos.x <= -10)
+        {
+            enemyPos.x = Random.Range(10, 15);
+            Debug.Log(enemyPos.x);
+        }
 
         if (speed >= 15) speed = 15;
 	}

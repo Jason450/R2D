@@ -30,6 +30,16 @@ public class PlayerScript : MonoBehaviour
         {
             lvlManager.FinishLevel();
         }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            rb.gravityScale = 4;
+        }
+        
+        if (collisions.isGrounded)
+        {
+            rb.gravityScale = 2;
+        }
     }
 
     private void FixedUpdate()

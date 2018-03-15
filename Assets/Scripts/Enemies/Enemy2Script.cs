@@ -15,7 +15,7 @@ public class Enemy2Script : MonoBehaviour
 
     void Start()
     {
-        enemyPos = new Vector2(20, enemy.position.y);
+        enemyPos = new Vector2(15, enemy.position.y);
     }
 
     void Update()
@@ -24,7 +24,11 @@ public class Enemy2Script : MonoBehaviour
         enemyPos.x -= speed * Time.deltaTime;
         enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
 
-        if(enemyPos.x <= -10) enemyPos.x = Random.Range(10, 20);
+        if (enemyPos.x <= -10)
+        {
+            enemyPos.x = Random.Range(10, 15);
+            Debug.Log(enemyPos.x);
+        }
 
         if(speed >= 15) speed = 15;
     }
