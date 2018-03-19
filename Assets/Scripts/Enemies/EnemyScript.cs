@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
 
 	void Start ()
     {
+        canMove = true;
         enemyPos = new Vector2(10, enemy.position.y);
 	}
 	
