@@ -31,7 +31,7 @@ public class Enemy2Script : MonoBehaviour
 
         if (enemyPos.x <= -10)
         {
-            enemyPos.x = Random.Range(10, 15);
+            enemyPos.x = Random.Range(10f, 15f);
             Debug.Log(enemyPos.x);
         }
 
@@ -46,6 +46,7 @@ public class Enemy2Script : MonoBehaviour
 
     public void Reset()
     {
-        enemyPos = new Vector2(20, enemy.position.y);
+        enemyPos = new Vector2(15, enemy.position.y);
+        speed = 5;
     }
 }

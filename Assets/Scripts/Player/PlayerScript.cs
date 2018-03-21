@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
             lvlManager.FinishLevel();
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             rb.gravityScale = 4;
         }

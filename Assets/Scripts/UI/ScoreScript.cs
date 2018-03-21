@@ -18,12 +18,12 @@ public class ScoreScript : MonoBehaviour
 	void Update ()
     {
         scoreText.text = "SCORE: " + score.ToString("D4");
-        maxScoreText.text = "MAX SCORE: " + maxScore.ToString("D4");
+        maxScoreText.text = "HI-SCORE: " + maxScore.ToString("D4");
 
         if(score > maxScore)
         {
             maxScore = score;
-            maxScoreText.text = "MAX SCORE: " + maxScore.ToString("D4");
+            maxScoreText.text = "HI-SCORE: " + maxScore.ToString("D4");
         }
     }
 

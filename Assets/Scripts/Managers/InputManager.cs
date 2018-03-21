@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public PlayerScript player;
+    public LevelManager lvlManager;
 
     void Start()
     {
@@ -21,7 +22,11 @@ public class InputManager : MonoBehaviour
 
     void InputPause()
     {
-        if (Input.GetButtonDown("Pause")) { Debug.Log("Pause"); }
+        if (Input.GetButtonDown("Pause"))
+        {
+            Debug.Log("Pause");
+            lvlManager.Pause();
+        }
     }
 
     void InputJump()

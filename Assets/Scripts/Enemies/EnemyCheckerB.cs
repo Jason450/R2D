@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyChecker : MonoBehaviour
+public class EnemyCheckerB : MonoBehaviour
 {
-    public Enemy2Script enemy;
+    public EnemyScript enemy;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         enemy.canMove = false;
-        Debug.Log("aaa" + collision);
+        Debug.Log(collision);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
