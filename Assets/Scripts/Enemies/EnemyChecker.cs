@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyChecker : MonoBehaviour
 {
-    public EnemyScript enemy;
+    public Enemy2Script enemy;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

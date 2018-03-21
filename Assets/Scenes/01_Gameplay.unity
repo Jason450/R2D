@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 761338982}
+  canMove: 0
   speed: 5
   damage: 1
   enemy: {fileID: 127391089}
@@ -1641,8 +1642,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156478405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 341.5, y: 192, z: 0}
-  m_LocalScale: {x: 0.35572916, y: 0.35572916, z: 0.35572916}
+  m_LocalPosition: {x: 324.5, y: 203, z: 0}
+  m_LocalScale: {x: 0.33802083, y: 0.33802083, z: 0.33802083}
   m_Children:
   - {fileID: 1245131183}
   - {fileID: 68461481}
@@ -2010,7 +2011,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669097773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 260, y: 469.73645, z: 0}
+  m_LocalPosition: {x: 260, y: 530.5547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245131183}
@@ -2557,7 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4d6e031c3a73d40ba52795d9b0f4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1029997511}
+  enemy: {fileID: 127391087}
 --- !u!61 &1943482888
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2607,7 +2608,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2104208007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 760, y: 469.73645, z: 0}
+  m_LocalPosition: {x: 760, y: 530.5547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245131183}

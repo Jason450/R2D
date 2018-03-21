@@ -7,6 +7,7 @@ public class Enemy2Script : MonoBehaviour
     [Header("Other Scripts")]
     public PlayerScript player;
     [Header("Stats")]
+    public bool canMove;
     public float speed;
     public int damage = 1;
     [Header("Physics")]
@@ -15,14 +16,18 @@ public class Enemy2Script : MonoBehaviour
 
     void Start()
     {
+        canMove = true;
         enemyPos = new Vector2(15, enemy.position.y);
     }
 
     void Update()
     {
-        speed += 0.1f * Time.deltaTime;
-        enemyPos.x -= speed * Time.deltaTime;
-        enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
+        if (canMove)
+        {
+            speed += 0.1f * Time.deltaTime;
+            enemyPos.x -= speed * Time.deltaTime;
+            enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
+        }
 
         if (enemyPos.x <= -10)
         {
