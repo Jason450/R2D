@@ -15,13 +15,18 @@ public class LevelManager : MonoBehaviour
     public GroundScript ground;
     public GameObject pauseScreen;
     public GameObject endingScreen;
+    public AudioSource sound;
     public int maxScore;
-    public bool playingLevel = true;
-    public bool lvlEnded = false;
-    public bool pause = false;
+    public bool playingLevel;
+    public bool lvlEnded;
+    public bool pause;
 
 	void Start ()
     {
+        player.life = 1;
+        playingLevel = true;
+        lvlEnded = false;
+        pause = false;
         scoreScript.maxScore =  PlayerPrefs.GetInt("maxScore");
     }
 
@@ -76,6 +81,7 @@ public class LevelManager : MonoBehaviour
 
     public void FinishLevel()
     {
+        sound.Play();
         playingLevel = false;
         lvlEnded = true;
     }

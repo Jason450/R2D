@@ -494,7 +494,7 @@ MonoBehaviour:
   deltaValue: 0
   currentTime: 0
   timeDuration: 2
-  startDelay: 5
+  startDelay: 3
   image: {fileID: 1040694002}
 --- !u!1 &1408859792
 GameObject:
@@ -578,8 +578,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1408859792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 330, y: 185.5, z: 0}
-  m_LocalScale: {x: 0.34375, y: 0.34375, z: 0.34375}
+  m_LocalPosition: {x: 227.5, y: 128, z: 0}
+  m_LocalScale: {x: 0.23697919, y: 0.23697919, z: 0.23697919}
   m_Children:
   - {fileID: 334877031}
   - {fileID: 31755777}
