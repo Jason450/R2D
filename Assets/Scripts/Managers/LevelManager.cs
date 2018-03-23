@@ -22,13 +22,11 @@ public class LevelManager : MonoBehaviour
 
 	void Start ()
     {
-        //PlayerPrefs.SetInt("maxScore", maxScore);
-        //scoreScript.UpdateScore(maxScore);
+        scoreScript.maxScore =  PlayerPrefs.GetInt("maxScore");
     }
 
     void Update ()
     {
-        //scoreScript.UpdateScore(maxScore);
         cloud01.PlayingLevel(playingLevel);
         cloud02.PlayingLevel(playingLevel);
         cloud03.PlayingLevel(playingLevel);
@@ -52,7 +50,7 @@ public class LevelManager : MonoBehaviour
             endingScreen.SetActive(true);
             player.gameObject.SetActive(false);
             enemy.gameObject.SetActive(false);
-            //scoreScript.maxScore = PlayerPrefs.GetInt("maxScore", maxScore);
+            PlayerPrefs.SetInt("maxScore", scoreScript.maxScore);
         }
 
         if (pause)
