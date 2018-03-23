@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     [Header("Graphics")]
     public Animator anim;
+    [Header("Audio")]
+    public AudioSource sound;
     [Header("Bools")]
     public bool canJump;
     public bool isJumping;
@@ -73,6 +75,7 @@ public class PlayerScript : MonoBehaviour
         if (collisions.isGrounded)
         {
             Jump();
+            sound.Play();
         }
     }
 
