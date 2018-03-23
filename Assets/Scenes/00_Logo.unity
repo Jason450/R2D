@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: 0
-  image: {fileID: 31755778}
+  image: {fileID: 1040694002}
 --- !u!4 &1585863760
 Transform:
   m_ObjectHideFlags: 0
