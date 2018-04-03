@@ -14,10 +14,12 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        // Leer para pausar el juego
+        // Pausar el juego
         InputPause();
-        // salto del player
+        // Salto del player
         InputJump();
+        // Activar/Desactivar God Mode
+        GodMode();
     }
 
     void InputPause()
@@ -35,6 +37,14 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Jump");
             player.JumpStart();
+        }
+    }
+
+    void GodMode()
+    {
+        if (Input.GetKeyDown(KeyCode.F10))
+        {
+            player.GodMode();
         }
     }
 }

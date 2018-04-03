@@ -18,13 +18,13 @@ public class PlayerScript : MonoBehaviour
     [Header("Bools")]
     public bool canJump;
     public bool isJumping;
-    public bool canRecieveDmg;
+    public bool godMode;
     [Header("Forces")]
     public float jumpForce;
 
 	void Start ()
     {
-        canRecieveDmg = true;
+        godMode = false;
         life = 1;
 	}
 	
@@ -83,9 +83,21 @@ public class PlayerScript : MonoBehaviour
 
     public void RecieveDamage(int damage)
     {
-        if (canRecieveDmg)
+        life -= damage;
+    }
+
+    public void GodMode()
+    {
+        godMode = !godMode;
+        if (godMode)
         {
-            life -= damage;
+            Debug.Log("God Mode On");
+            Physics2D.IgnoreLayerCollision(8, 10, true);
+        }
+        else
+        {
+            Debug.Log("God Mode Off");
+            Physics2D.IgnoreLayerCollision(8, 10, false);
         }
     }
 }
