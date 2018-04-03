@@ -18,11 +18,13 @@ public class PlayerScript : MonoBehaviour
     [Header("Bools")]
     public bool canJump;
     public bool isJumping;
+    public bool canRecieveDmg;
     [Header("Forces")]
     public float jumpForce;
 
 	void Start ()
     {
+        canRecieveDmg = true;
         life = 1;
 	}
 	
@@ -81,6 +83,9 @@ public class PlayerScript : MonoBehaviour
 
     public void RecieveDamage(int damage)
     {
-        life -= damage;
+        if (canRecieveDmg)
+        {
+            life -= damage;
+        }
     }
 }
