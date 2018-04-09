@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public GameObject playButton;
+    public GameObject optionsButton;
+    public GameObject exitButton;
     public GameObject transition;
     public AudioSource sound;
     public float counter;
@@ -41,5 +44,10 @@ public class GameManagerScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OptionsMenu()
+    {
+
     }
 }
