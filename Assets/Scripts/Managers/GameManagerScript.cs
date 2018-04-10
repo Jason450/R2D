@@ -5,16 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public GameObject playButton;
-    public GameObject optionsButton;
-    public GameObject exitButton;
+    [Header("Main Menu")]
+    public GameObject mainMenu;
+    //public GameObject playButton;
+    //public GameObject optionsButton;
+    //public GameObject exitButton;
+    [Header("Options Menu")]
+    public GameObject optionsMenu;
+    [Header("Screen Transition")]
     public GameObject transition;
+    [Header("Transition Audio")]
     public AudioSource sound;
+
     public float counter;
     public bool starting;
 
     void Start ()
     {
+        mainMenu = GameObject.Find("Main Menu");
+        optionsMenu = GameObject.Find("Options Menu");
+        optionsMenu.SetActive(false);
+
         counter = 2;
         starting = false;
     }
@@ -41,13 +52,14 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void OptionsMenu()
+    {
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void OptionsMenu()
-    {
-
     }
 }

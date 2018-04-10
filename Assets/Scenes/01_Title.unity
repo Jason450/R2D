@@ -1240,7 +1240,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1571647297}
-        m_MethodName: Transition
+        m_MethodName: OptionsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1721,8 +1721,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035078559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 365, y: 205.5, z: 0}
-  m_LocalScale: {x: 0.38020834, y: 0.38020834, z: 0.38020834}
+  m_LocalPosition: {x: 332, y: 187, z: 0}
+  m_LocalScale: {x: 0.34583333, y: 0.34583333, z: 0.34583333}
   m_Children:
   - {fileID: 856614229}
   - {fileID: 1322918432}
@@ -2953,9 +2953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4157405bb12bf45ae7fdc0206d855a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 1458246002}
-  optionsButton: {fileID: 676308247}
-  exitButton: {fileID: 1958581653}
+  mainMenu: {fileID: 458634356}
+  optionsMenu: {fileID: 1799936195}
   transition: {fileID: 498883285}
   sound: {fileID: 1571647299}
   counter: 0
@@ -2981,7 +2980,8 @@ AudioSource:
   m_GameObject: {fileID: 1571647296}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243026996900113294, guid: c0f3e76bf8762e149b2ad97ffd0ba7ee,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 4516c4a1b2408024eb91754334a4f4c9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
