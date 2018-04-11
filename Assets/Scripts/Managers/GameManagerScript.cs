@@ -58,6 +58,12 @@ public class GameManagerScript : MonoBehaviour
         optionsMenu.SetActive(true);
     }
 
+    public void BackToMainMenu()
+    {
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
