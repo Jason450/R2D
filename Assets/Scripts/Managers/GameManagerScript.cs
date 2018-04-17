@@ -38,6 +38,8 @@ public class GameManagerScript : MonoBehaviour
 
             if (counter <= 0) LoadGameplay();
         }
+
+        if (Input.GetKeyDown(KeyCode.V)) sound.Play();
     }
 
     public void Transition()
