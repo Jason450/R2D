@@ -788,7 +788,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 697470602}
   m_HandleRect: {fileID: 956140052}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -30
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -797,10 +797,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1571647300}
         m_MethodName: SetSFXVolume
-        m_Mode: 4
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 209036607}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 1
           m_StringArgument: 
@@ -3491,8 +3491,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035078559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 349, y: 196.5, z: 0}
-  m_LocalScale: {x: 0.36354166, y: 0.36354166, z: 0.36354166}
+  m_LocalPosition: {x: 338, y: 190, z: 0}
+  m_LocalScale: {x: 0.35208333, y: 0.35208333, z: 0.35208333}
   m_Children:
   - {fileID: 856614229}
   - {fileID: 1322918432}
@@ -4642,7 +4642,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1027017836}
   m_HandleRect: {fileID: 1869899154}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -30
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -4651,10 +4651,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1571647300}
         m_MethodName: SetMasterVolume
-        m_Mode: 4
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1377108493}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5802,7 +5802,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1288744271}
   m_HandleRect: {fileID: 685884826}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -30
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -5811,10 +5811,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1571647300}
         m_MethodName: SetMusicVolume
-        m_Mode: 4
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1577554315}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

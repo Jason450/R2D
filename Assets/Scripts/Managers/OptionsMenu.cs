@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
@@ -44,7 +45,22 @@ public class OptionsMenu : MonoBehaviour
         Debug.Log(QualitySettings.GetQualityLevel());
     }
 
-    public void SetMasterVolume(float soundLevel)
+    public void SetMasterVolume(Slider soundLevel)
+    {
+        masterMixer.SetFloat("masterVol", soundLevel.value);
+    }
+
+    public void SetMusicVolume(Slider soundLevel)
+    {
+        masterMixer.SetFloat("musicVol", soundLevel.value);
+    }
+
+    public void SetSFXVolume(Slider soundLevel)
+    {
+        masterMixer.SetFloat("SFXVol", soundLevel.value);
+    }
+
+    /*public void SetMasterVolume(float soundLevel)
     {
         masterMixer.SetFloat("masterVol", soundLevel);
     }
@@ -53,9 +69,8 @@ public class OptionsMenu : MonoBehaviour
     {
         masterMixer.SetFloat("musicVol", soundLevel);
     }
-
     public void SetSFXVolume(float soundLevel)
     {
         masterMixer.SetFloat("SFXVol", soundLevel);
-    }
+    }*/
 }
