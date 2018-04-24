@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Score")]
     public ScoreScript scoreScript;
+    public int maxScore;
+    [Header("Player")]
     public PlayerScript player;
+    [Header("Enemies")]
     public EnemyScript enemy;
     public Enemy2Script enemy2;
+    [Header("Clouds")]
     public CloudScript cloud01;
     public CloudScript cloud02;
     public CloudScript cloud03;
     public CloudScript cloud04;
+    public CloudScript cloud05;
+    public CloudScript cloud06;
+    public CloudScript cloud07;
+    [Header("Ground")]
     public GroundScript ground;
+    [Header("Menu Screens")]
     public GameObject pauseScreen;
     public GameObject endingScreen;
+    [Header("Audio")]
     public AudioSource sound;
-    public int maxScore;
+    [Header("Level States")]
     public bool playingLevel;
     public bool lvlEnded;
     public bool pause;
@@ -36,6 +47,9 @@ public class LevelManager : MonoBehaviour
         cloud02.PlayingLevel(playingLevel);
         cloud03.PlayingLevel(playingLevel);
         cloud04.PlayingLevel(playingLevel);
+        cloud05.PlayingLevel(playingLevel);
+        cloud06.PlayingLevel(playingLevel);
+        cloud07.PlayingLevel(playingLevel);
 
         ground.PlayingLevel(playingLevel);
 
