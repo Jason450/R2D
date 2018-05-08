@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 5f384b8d2c560da4e9bc140d12ff8ef8
-timeCreated: 1525789902
+guid: 95727f146b253e0469ad1c949675e8fa
+timeCreated: 1525790609
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tile_jungle_vegetation_0
+    21300002: tile_jungle_vegetation_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -34,19 +36,19 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -1
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 1
-  spritePivot: {x: 0, y: 1}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 113}
-  spritePixelsToUnits: 156
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,17 +78,36 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline:
-    - - {x: 10, y: 78}
-      - {x: 6, y: 77}
-      - {x: -11, y: 78}
-      - {x: -61, y: 78}
-      - {x: -78, y: 73}
-      - {x: -78, y: -78}
-      - {x: 78, y: -78}
-      - {x: 78, y: 72}
-      - {x: 57, y: 78}
+    sprites:
+    - serializedVersion: 2
+      name: tile_jungle_vegetation_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 18
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tile_jungle_vegetation_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 192
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
     physicsShape: []
   spritePackingTag: 
   userData: 
