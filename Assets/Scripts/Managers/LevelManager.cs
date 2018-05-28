@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
 	void Start ()
     {
         player.life = 1;
-        playingLevel = true;
+        //playingLevel = true;
         lvlEnded = false;
         pause = false;
         scoreScript.maxScore =  PlayerPrefs.GetInt("maxScore");
@@ -43,22 +43,22 @@ public class LevelManager : MonoBehaviour
 
     void Update ()
     {
-        cloud01.PlayingLevel(playingLevel);
-        cloud02.PlayingLevel(playingLevel);
-        cloud03.PlayingLevel(playingLevel);
-        cloud04.PlayingLevel(playingLevel);
-        cloud05.PlayingLevel(playingLevel);
-        cloud06.PlayingLevel(playingLevel);
-        cloud07.PlayingLevel(playingLevel);
+        //cloud01.PlayingLevel(playingLevel);
+        //cloud02.PlayingLevel(playingLevel);
+        //cloud03.PlayingLevel(playingLevel);
+        //cloud04.PlayingLevel(playingLevel);
+        //cloud05.PlayingLevel(playingLevel);
+        //cloud06.PlayingLevel(playingLevel);
+        //cloud07.PlayingLevel(playingLevel);
 
-        ground.PlayingLevel(playingLevel);
+        //ground.PlayingLevel(playingLevel);
 
         if (playingLevel)
         {
             pauseScreen.SetActive(false);
             endingScreen.SetActive(false);
-            player.gameObject.SetActive(true);
-            enemy.gameObject.SetActive(true);
+            //player.gameObject.SetActive(true);
+            //enemy.gameObject.SetActive(true);
         }
 
         if (lvlEnded)

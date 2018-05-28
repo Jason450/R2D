@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloudScript : MonoBehaviour
 {
     [Header("Stats")]
-    public bool playingLvl;
+    //public bool playingLvl;
     public float speed;
     [Header("Physics")]
     public Transform cloud;
@@ -18,11 +18,11 @@ public class CloudScript : MonoBehaviour
 	
 	void Update ()
     {
-        if(playingLvl)
-        {
-            cloudPos.x -= speed * Time.deltaTime;
-            cloud.position = new Vector3(cloudPos.x, cloudPos.y, 0);
-        }
+        //if(playingLvl)
+        //{
+        //}
+        cloudPos.x -= speed * Time.deltaTime;
+        cloud.position = new Vector3(cloudPos.x, cloudPos.y, 0);
 
         if (cloudPos.x <= -12)
         {
@@ -31,8 +31,8 @@ public class CloudScript : MonoBehaviour
         }
     }
 
-    public void PlayingLevel(bool isPlaying)
-    {
-        playingLvl = isPlaying;
-    }
+    //public void PlayingLevel(bool isPlaying)
+    //{
+    //    playingLvl = isPlaying;
+    //}
 }

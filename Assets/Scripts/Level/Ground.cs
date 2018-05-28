@@ -8,6 +8,7 @@ public class Ground : MonoBehaviour
     public Transform trans;
     public Vector3 position;
     public float scrollSpeed;
+    public List<Sprite> sprites;
 
     void Start()
     {
