@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: 8679bd8df73ab39429afe70e5c67be57
-timeCreated: 1524581795
+guid: a0e19a6dd03dbbd43a83b57b8393be89
+timeCreated: 1527479698
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: obj_largemushroom_0
+    21300002: obj_largemushroom_1
+    21300004: obj_largemushroom_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -76,7 +79,49 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: obj_largemushroom_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 64
+        width: 52
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: obj_largemushroom_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 32
+        width: 52
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: obj_largemushroom_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 52
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

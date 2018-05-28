@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 8679bd8df73ab39429afe70e5c67be57
-timeCreated: 1524581795
+guid: ec9ef6ddefbb12b41a7ca7884deb85ba
+timeCreated: 1527479675
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: obj_carniplant_0
+    21300002: obj_carniplant_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -76,7 +78,35 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: obj_carniplant_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 54
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: obj_carniplant_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 55
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

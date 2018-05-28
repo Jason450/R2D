@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Pause");
             lvlManager.Pause();
+            Time.timeScale = 0;
         }
     }
 

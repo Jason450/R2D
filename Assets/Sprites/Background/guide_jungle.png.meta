@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 8679bd8df73ab39429afe70e5c67be57
-timeCreated: 1524581795
+guid: bb6771e7b81645743846674b3a63cff2
+timeCreated: 1527480730
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: guide_jungle_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -76,7 +77,21 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guide_jungle_0
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 358
+        width: 160
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

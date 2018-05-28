@@ -27,7 +27,7 @@ public class CloudScript : MonoBehaviour
         if (cloudPos.x <= -12)
         {
             cloudPos.x = 12;
-            speed = Random.Range(5, 10);
+            //speed = Random.Range(5, 10);
         }
     }
 
