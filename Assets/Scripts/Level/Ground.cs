@@ -9,6 +9,7 @@ public class Ground : MonoBehaviour
     public Vector3 position;
     public float scrollSpeed;
     public List<Sprite> sprites;
+    public List<SpriteRenderer> randomSprite;
 
     void Start()
     {
@@ -18,13 +19,14 @@ public class Ground : MonoBehaviour
 
     void Update()
     {
-        scrollSpeed += 0.1f * Time.deltaTime;
+        //scrollSpeed += 0.1f * Time.deltaTime;
         position.x -= scrollSpeed * Time.deltaTime;
         trans.localPosition = position;
 
         if (position.x <= -20)
         {
             position.x += 40;
+            RandomizeSprites();
         }
 
         //if (playingLvl)
@@ -45,5 +47,13 @@ public class Ground : MonoBehaviour
     public void Reset()
     {
         scrollSpeed = 5;
+    }
+
+    void RandomizeSprites()
+    {
+        for (int i = 0; i < randomSprite.Count; i++)
+        {
+            randomSprite[i].sprite = sprites[Random.Range(0, sprites.Count)];
+        }
     }
 }

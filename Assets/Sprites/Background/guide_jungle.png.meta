@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: bb6771e7b81645743846674b3a63cff2
-timeCreated: 1527480730
+timeCreated: 1527605786
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: guide_jungle_0
+    21300002: guide_jungle_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -86,6 +87,20 @@ TextureImporter:
         y: 358
         width: 160
         height: 126
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: guide_jungle_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 577
+        width: 403
+        height: 222
       alignment: 9
       pivot: {x: 0.5, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
