@@ -9,9 +9,13 @@ public class Parallax : MonoBehaviour
     public Vector3 position;
     public float scrollSpeed;
     public bool flip;
+    public bool randomAdd;
     public int random;
+    public float randomAddValue;
     public float minY;
     public float maxY;
+    public float minX;
+    public float maxX;
     public float xLimit;
     public float addPosValue;
 
@@ -27,6 +31,12 @@ public class Parallax : MonoBehaviour
     {
         position.x -= scrollSpeed * Time.deltaTime;
         trans.localPosition = position;
+
+        if (randomAdd)
+        {
+            randomAddValue = Random.Range(minX, maxX);
+            addPosValue = randomAddValue;
+        }
 
         if (position.x <= xLimit)
         {

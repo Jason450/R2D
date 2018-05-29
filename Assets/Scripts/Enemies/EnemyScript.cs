@@ -17,14 +17,14 @@ public class EnemyScript : MonoBehaviour
 	void Start ()
     {
         canMove = true;
-        enemyPos = new Vector2(10, enemy.position.y);
+        enemyPos = new Vector2(15, enemy.position.y);
 	}
 	
 	void Update ()
     {
         if (canMove)
         {
-            speed += 0.1f * Time.deltaTime;
+            //speed += 0.1f * Time.deltaTime;
             enemyPos.x -= speed * Time.deltaTime;
             enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
         }
