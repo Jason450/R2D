@@ -86,6 +86,11 @@ public class PlayerScript : MonoBehaviour
         life -= damage;
     }
 
+    public void Shot()
+    {
+        
+    }
+
     public void GodMode()
     {
         godMode = !godMode;

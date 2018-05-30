@@ -15,6 +15,7 @@ public class Ground : MonoBehaviour
     {
         trans = this.gameObject.GetComponent<Transform>();
         position = trans.localPosition;
+        RandomizeSprites();
     }
 
     void Update()
