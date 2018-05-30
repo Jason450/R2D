@@ -8,18 +8,25 @@ public class PlayerShot : MonoBehaviour
     public PlayerScript player;
     public Vector2 mousePos;
     public Vector2 direction;
+    public Vector3 clickPos;
     public float speed;
 
 	void Start ()
     {
         shot = GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //clickPos = cam.ScreenToViewportPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (new Vector2(mousePos.x, mousePos.y) - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
     }
 	
 	void Update ()
     {
         this.transform.Translate(new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime);
+        //mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+        //this.transform.localPosition = mousePos;
+        Debug.Log(Input.mousePosition);
     }
 }
