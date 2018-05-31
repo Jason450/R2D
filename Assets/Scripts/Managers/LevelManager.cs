@@ -24,17 +24,14 @@ public class LevelManager : MonoBehaviour
     [Header("Ground")]
     public GroundScript ground;
     [Header("Menu Screens")]
-    public GameObject pauseScreen;
-    public GameObject endingScreen;
+    public BounceGroup pauseGroup;
+    public BounceGroup endingGroup;
     [Header("Audio")]
     public AudioSource sound;
     [Header("Level States")]
     public bool playingLevel;
     public bool lvlEnded;
     public bool pause;
-    [Header("Canvas Groups")]
-    public BounceGroup pauseGroup;
-    public BounceGroup endingGroup;
 
     void Start ()
     {
@@ -77,11 +74,14 @@ public class LevelManager : MonoBehaviour
         {
             Time.timeScale = 0;
             PauseGroupOn();
+            Debug.Log("ON");
+
         }
         else
         {
             Time.timeScale = 1;
             PauseGroupOff();
+            Debug.Log("OFF");
         }
     }
 
@@ -92,6 +92,8 @@ public class LevelManager : MonoBehaviour
 
     public void PauseGroupOn()
     {
+        Debug.Log("pause");
+        pauseGroup.gameObject.SetActive(true);
         pauseGroup.start = 1000;
         pauseGroup.end = -100;
         pauseGroup.Active = true;
@@ -106,6 +108,8 @@ public class LevelManager : MonoBehaviour
 
     public void EndingGroupOn()
     {
+        Debug.Log("ending");
+        endingGroup.gameObject.SetActive(true);
         endingGroup.start = 1000;
         endingGroup.end = -100;
         endingGroup.Active = true;

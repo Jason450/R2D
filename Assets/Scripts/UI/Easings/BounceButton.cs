@@ -25,11 +25,11 @@ public class BounceButton : MonoBehaviour
         {
             if (delay > 0)
             {
-                delay -= Time.deltaTime;
+                delay -= Time.unscaledDeltaTime;
                 return;
             }
 
-            current += Time.deltaTime;
+            current += Time.unscaledDeltaTime;
 
             if (current <= desired)
             {
@@ -44,6 +44,7 @@ public class BounceButton : MonoBehaviour
             {
                 active = false;
                 current = 0;
+                transf.localScale = new Vector3(end, end, 1);
             }
         }
     }

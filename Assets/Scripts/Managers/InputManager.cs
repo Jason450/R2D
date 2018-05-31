@@ -24,17 +24,16 @@ public class InputManager : MonoBehaviour
 
     void InputPause()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("Pause");
+            //Debug.Log("Pause");
             lvlManager.Pause();
-            //Time.timeScale = 0;
         }
     }
 
     void InputJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Jump");
             player.JumpStart();
