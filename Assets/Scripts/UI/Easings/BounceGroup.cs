@@ -25,11 +25,11 @@ public class BounceGroup : MonoBehaviour
         {
             if (delay > 0)
             {
-                delay -= Time.deltaTime;
+                delay -= Time.unscaledDeltaTime;
                 return;
             }
 
-            current += Time.deltaTime;
+            current += Time.unscaledDeltaTime;
 
             if (current <= desired)
             {
@@ -37,7 +37,7 @@ public class BounceGroup : MonoBehaviour
 
                 value = Easing.ElasticEaseOut(current, start, end - start, desired);
 
-                transf.localPosition = new Vector3(this.gameObject.transform.position.x, value, 0);
+                transf.localPosition = new Vector3(this.gameObject.transform.localPosition.x, value, 0);
             }
 
             if (current >= desired)

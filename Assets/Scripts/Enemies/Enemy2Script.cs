@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy2Script : MonoBehaviour
 {
+    public Animator anim;
     [Header("Other Scripts")]
     public PlayerScript player;
     [Header("Stats")]
@@ -32,7 +33,8 @@ public class Enemy2Script : MonoBehaviour
         if (enemyPos.x <= -10)
         {
             enemyPos.x = Random.Range(10f, 15f);
-            Debug.Log(enemyPos.x);
+            enemyPos.y = Random.Range(-2f, 3f);
+            //Debug.Log(enemyPos.x);
         }
 
         if(speed >= 15) speed = 15;
@@ -46,7 +48,7 @@ public class Enemy2Script : MonoBehaviour
 
     public void Reset()
     {
-        enemyPos = new Vector2(15, enemy.position.y);
+        enemyPos = new Vector2((Random.Range(10, 15)), enemy.position.y);
         speed = 5;
     }
 }

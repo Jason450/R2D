@@ -26,14 +26,15 @@ public class PlayerScript : MonoBehaviour
     {
         godMode = false;
         life = 1;
-	}
-	
-	void Update ()
+        this.transform.localPosition = new Vector3(-5, -2.35f, 0);
+    }
+
+    void Update ()
     {
-        if (life <= 0)
-        {
-            lvlManager.FinishLevel();
-        }
+        //if (life <= 0)
+        //{
+        //    lvlManager.FinishLevel();
+        //}
 
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -84,11 +85,22 @@ public class PlayerScript : MonoBehaviour
     public void RecieveDamage(int damage)
     {
         life -= damage;
+
+        if (life <= 0)
+        {
+            Reset();
+            lvlManager.FinishLevel();
+        }
     }
 
     public void Shot()
     {
         
+    }
+
+    public void Reset()
+    {
+        this.transform.localPosition = new Vector3(-5, -2.35f, 0);
     }
 
     public void GodMode()

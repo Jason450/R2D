@@ -19,14 +19,24 @@ public class PlayerShot : MonoBehaviour
         //clickPos = cam.ScreenToViewportPoint(Input.mousePosition);
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (new Vector2(mousePos.x, mousePos.y) - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
+        Destroy(this.gameObject, 5);
     }
 	
 	void Update ()
     {
         this.transform.Translate(new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime);
+
+        if (shot.localPosition.x >= 10)
+        {
+            Destroy(this.gameObject);
+        }
+        if (shot.localPosition.y >= 5)
+        {
+            Destroy(this.gameObject);
+        }
         //mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
         //this.transform.localPosition = mousePos;
-        Debug.Log(Input.mousePosition);
+        //Debug.Log(Input.mousePosition);
     }
 }

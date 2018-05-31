@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -31,11 +32,13 @@ public class LevelManager : MonoBehaviour
     public bool playingLevel;
     public bool lvlEnded;
     public bool pause;
+    [Header("Canvas Groups")]
+    public BounceGroup pauseGroup;
+    public BounceGroup endingGroup;
 
-	void Start ()
+    void Start ()
     {
         player.life = 1;
-        //playingLevel = true;
         lvlEnded = false;
         pause = false;
         scoreScript.maxScore =  PlayerPrefs.GetInt("maxScore");
@@ -43,54 +46,17 @@ public class LevelManager : MonoBehaviour
 
     void Update ()
     {
-        //cloud01.PlayingLevel(playingLevel);
-        //cloud02.PlayingLevel(playingLevel);
-        //cloud03.PlayingLevel(playingLevel);
-        //cloud04.PlayingLevel(playingLevel);
-        //cloud05.PlayingLevel(playingLevel);
-        //cloud06.PlayingLevel(playingLevel);
-        //cloud07.PlayingLevel(playingLevel);
-
-        //ground.PlayingLevel(playingLevel);
-
-        if (playingLevel)
-        {
-            pauseScreen.SetActive(false);
-            endingScreen.SetActive(false);
-            //player.gameObject.SetActive(true);
-            //enemy.gameObject.SetActive(true);
-        }
-
-        if (lvlEnded)
-        {
-            enemy.Reset();
-            enemy2.Reset();
-            ground.Reset();
-            endingScreen.SetActive(true);
-            player.gameObject.SetActive(false);
-            enemy.gameObject.SetActive(false);
-            PlayerPrefs.SetInt("maxScore", scoreScript.maxScore);
-        }
-
-        if (pause)
-        {
-            Time.timeScale = 0;
-            pauseScreen.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            pauseScreen.SetActive(false);
-        }
+        
 	}
 
     public void StartLevel()
     {
         scoreScript.Reset();
-        player.life = 1;
         playingLevel = true;
         lvlEnded = false;
-        pause = false;
+        player.gameObject.SetActive(true);
+        player.life = 1;
+        EndingGroupOff();
     }
 
     public void FinishLevel()
@@ -98,21 +64,57 @@ public class LevelManager : MonoBehaviour
         sound.Play();
         playingLevel = false;
         lvlEnded = true;
-    }
-
-    public void Unpause()
-    {
-        playingLevel = true;
-        pause = false;
+        player.gameObject.SetActive(false);
+        EndingGroupOn();
+        PlayerPrefs.SetInt("maxScore", scoreScript.maxScore);
     }
 
     public void Pause()
     {
         pause = !pause;
+
+        if (pause)
+        {
+            Time.timeScale = 0;
+            PauseGroupOn();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            PauseGroupOff();
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PauseGroupOn()
+    {
+        pauseGroup.start = 1000;
+        pauseGroup.end = -100;
+        pauseGroup.Active = true;
+    }
+
+    public void PauseGroupOff()
+    {
+        pauseGroup.start = -100;
+        pauseGroup.end = 1000;
+        pauseGroup.Active = true;
+    }
+
+    public void EndingGroupOn()
+    {
+        endingGroup.start = 1000;
+        endingGroup.end = -100;
+        endingGroup.Active = true;
+    }
+
+    public void EndingGroupOff()
+    {
+        endingGroup.start = -100;
+        endingGroup.end = 1000;
+        endingGroup.Active = true;
     }
 }
