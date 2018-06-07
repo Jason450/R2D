@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     [Header("Graphics")]
     public Animator anim;
+    public Animator playerAnim;
     [Header("Audio")]
     public AudioSource sound;
     [Header("Bools")]
@@ -74,15 +75,23 @@ public class PlayerScript : MonoBehaviour
         anim.SetBool("IsJumping", true);
     }
 
+    //public void JumpStart()
+    //{
+    //    if (!canJump || lvlManager.pause) return;
+
+    //    if (collisions.isGrounded)
+    //    {
+    //        Jump();
+    //        sound.Play();
+    //    }
+    //}
+
     public void JumpStart()
     {
-        if (!canJump || lvlManager.pause) return;
-
-        if (collisions.isGrounded)
-        {
-            Jump();
-            sound.Play();
-        }
+        if (lvlManager.pause) return;
+        
+        Jump();
+        sound.Play();
     }
 
     public void RecieveDamage(int damage)
@@ -98,7 +107,9 @@ public class PlayerScript : MonoBehaviour
 
     public void Shot()
     {
-        
+        if (lvlManager.pause) return;
+
+        playerAnim.SetTrigger("Attack");
     }
 
     public void Reset()

@@ -103,6 +103,7 @@ public class LevelManager : MonoBehaviour
     {
         pauseGroup.start = -100;
         pauseGroup.end = 1000;
+        pauseGroup.desired = 0.1f;
         pauseGroup.Active = true;
     }
 
@@ -119,6 +120,7 @@ public class LevelManager : MonoBehaviour
     {
         endingGroup.start = -100;
         endingGroup.end = 1000;
+        endingGroup.desired = 0.1f;
         endingGroup.Active = true;
     }
 }

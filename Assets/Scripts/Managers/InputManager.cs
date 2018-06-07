@@ -18,6 +18,8 @@ public class InputManager : MonoBehaviour
         InputPause();
         // Salto del player
         InputJump();
+        // Ataque del player
+        Attack();
         // Activar/Desactivar God Mode
         GodMode();
     }
@@ -37,6 +39,14 @@ public class InputManager : MonoBehaviour
         {
             Debug.Log("Jump");
             player.JumpStart();
+        }
+    }
+
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            player.Shot();
         }
     }
 
