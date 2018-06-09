@@ -15,9 +15,9 @@ public class PlayerShot : MonoBehaviour
     {
         shot = GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        //mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        //clickPos = cam.ScreenToViewportPoint(Input.mousePosition);
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        clickPos = new Vector3(mousePos.x, mousePos.y, 0);
+        //shot.right = clickPos - shot.localPosition;
         direction = (new Vector2(mousePos.x, mousePos.y) - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
         Destroy(this.gameObject, 5);
     }
@@ -34,9 +34,5 @@ public class PlayerShot : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-        //this.transform.localPosition = mousePos;
-        //Debug.Log(Input.mousePosition);
     }
 }

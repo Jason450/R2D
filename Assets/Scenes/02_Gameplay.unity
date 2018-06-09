@@ -2644,6 +2644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9c8103a54109d49bc3101569f99f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: {fileID: 1482382515094558, guid: 4aa9f71e67a47d941b897d8f44a20af4, type: 2}
   lvlManager: {fileID: 1913315112}
   life: 0
   collisions: {fileID: 761338983}
@@ -4395,8 +4396,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156478405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 213.5, y: 120, z: 0}
-  m_LocalScale: {x: 0.22239585, y: 0.22239585, z: 0.22239585}
+  m_LocalPosition: {x: 254, y: 143, z: 0}
+  m_LocalScale: {x: 0.26458332, y: 0.26458332, z: 0.26458332}
   m_Children:
   - {fileID: 1245131183}
   - {fileID: 2005426317}
@@ -6348,7 +6349,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1669097773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 259.99994, y: 469.57843, z: 0}
+  m_LocalPosition: {x: 260.00006, y: 470.47247, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245131183}
@@ -8025,7 +8026,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2104208007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 759.99994, y: 469.57843, z: 0}
+  m_LocalPosition: {x: 760.00006, y: 470.47247, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245131183}

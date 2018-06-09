@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public GameObject shot;
     [Header("Other Scripts")]
     public LevelManager lvlManager;
     [Header("Stats")]
@@ -110,6 +111,7 @@ public class PlayerScript : MonoBehaviour
         if (lvlManager.pause) return;
 
         playerAnim.SetTrigger("Attack");
+        Instantiate(shot, new Vector3(this.transform.position.x + 1, this.transform.position.y + 1, 0), new Quaternion(0, 0, 0, 0));
     }
 
     public void Reset()
