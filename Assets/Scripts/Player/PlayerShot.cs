@@ -10,6 +10,7 @@ public class PlayerShot : MonoBehaviour
     public Vector2 direction;
     public Vector3 clickPos;
     public float speed;
+    public int damage;
 
 	void Start ()
     {
@@ -19,7 +20,7 @@ public class PlayerShot : MonoBehaviour
         clickPos = new Vector3(mousePos.x, mousePos.y, 0);
         //shot.right = clickPos - shot.localPosition;
         direction = (new Vector2(mousePos.x, mousePos.y) - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 4);
     }
 	
 	void Update ()
@@ -32,6 +33,26 @@ public class PlayerShot : MonoBehaviour
         }
         if (shot.localPosition.y >= 5)
         {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("shot connect");
+        if (collision.gameObject.tag == "Enemy01")
+        {
+            collision.gameObject.GetComponent<EnemyScript>().RecieveDamage(damage);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy02")
+        {
+            collision.gameObject.GetComponent<Enemy2Script>().RecieveDamage(damage);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            Debug.Log("Destroyed by ground");
             Destroy(this.gameObject);
         }
     }

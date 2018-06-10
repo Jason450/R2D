@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviour
         if (collisions.isGrounded)
         {
             canJump = true;
-            anim.SetBool("IsJumping", false);
+            //anim.SetBool("IsJumping", false);
         }
         else
         {
@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         isJumping = true;
-        anim.SetBool("IsJumping", true);
+        //anim.SetBool("IsJumping", true);
     }
 
     //public void JumpStart()

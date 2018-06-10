@@ -11,8 +11,10 @@ public class LevelManager : MonoBehaviour
     [Header("Player")]
     public PlayerScript player;
     [Header("Enemies")]
-    public EnemyScript enemy;
-    public Enemy2Script enemy2;
+    public List<EnemyScript> enemy01;
+    public List<Enemy2Script> enemy02;
+    //public EnemyScript enemy;
+    //public Enemy2Script enemy2;
     [Header("Clouds")]
     public CloudScript cloud01;
     public CloudScript cloud02;
@@ -39,6 +41,14 @@ public class LevelManager : MonoBehaviour
         lvlEnded = false;
         pause = false;
         scoreScript.maxScore =  PlayerPrefs.GetInt("maxScore");
+        for (int i = 0; i < enemy01.Count; i++)
+        {
+            enemy01[i].Reset();
+        }
+        for (int i = 0; i < enemy02.Count; i++)
+        {
+            enemy02[i].Reset();
+        }
     }
 
     void Update ()
@@ -54,6 +64,14 @@ public class LevelManager : MonoBehaviour
         player.gameObject.SetActive(true);
         player.life = 1;
         EndingGroupOff();
+        for (int i = 0; i < enemy01.Count; i++)
+        {
+            enemy01[i].Reset();
+        }
+        for (int i = 0; i < enemy02.Count; i++)
+        {
+            enemy02[i].Reset();
+        }
     }
 
     public void FinishLevel()

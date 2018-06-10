@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public GameObject splash;
     [Header("Other Scripts")]
     public PlayerScript player;
+    public ScoreScript scoreScript;
     [Header("Stats")]
+    public int maxLife;
+    public int life;
     public bool canMove;
     public float speed;
     public int damage = 1;
+    public int scoreValue = 5;
     [Header("Physics")]
     public Transform enemy;
     private Vector2 enemyPos;
 
 	void Start ()
     {
+        life = maxLife;
         canMove = true;
-        enemyPos = new Vector2(15, enemy.position.y);
+        //enemyPos = new Vector2(15, enemy.position.y);
 	}
 	
 	void Update ()
@@ -31,7 +37,7 @@ public class EnemyScript : MonoBehaviour
 
         if (enemyPos.x <= -10)
         {
-            enemyPos.x = Random.Range(10f, 15f);
+            Reset();
             //Debug.Log(enemyPos.x);
         }
 
@@ -40,13 +46,30 @@ public class EnemyScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.RecieveDamage(damage);
-        Reset();
+        Debug.Log("collided");
+        if (collision.gameObject.tag == "Player")
+        {
+            player.RecieveDamage(damage);
+            Reset();
+        }
+    }
+
+    public void RecieveDamage(int damage)
+    {
+        Debug.Log("enemy damaged?");
+        life -= damage;
+        if (life == 0)
+        {
+            Instantiate(splash, new Vector3(this.transform.position.x, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
+            scoreScript.UpdateScore(scoreValue);
+            Reset();
+        }
     }
 
     public void Reset()
     {
-        enemyPos = new Vector2((Random.Range(10, 15)), enemy.position.y);
+        enemyPos = new Vector2((Random.Range(10, 20)), enemy.position.y);
+        life = maxLife;
         //speed = 5;
     }
 }

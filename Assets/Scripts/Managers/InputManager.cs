@@ -44,9 +44,12 @@ public class InputManager : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (player.isActiveAndEnabled)
         {
-            player.Shot();
+            if (Input.GetMouseButtonDown(0))
+            {
+                player.Shot();
+            }
         }
     }
 
