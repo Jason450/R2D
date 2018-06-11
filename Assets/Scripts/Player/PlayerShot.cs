@@ -39,7 +39,7 @@ public class PlayerShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("shot connect");
+        Debug.Log("shot connect" + collision.name);
         if (collision.gameObject.tag == "Enemy01")
         {
             collision.gameObject.GetComponent<EnemyScript>().RecieveDamage(damage);
@@ -48,6 +48,11 @@ public class PlayerShot : MonoBehaviour
         else if (collision.gameObject.tag == "Enemy02")
         {
             collision.gameObject.GetComponent<Enemy2Script>().RecieveDamage(damage);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Boss")
+        {
+            collision.gameObject.GetComponent<BossScript>().RecieveDamage(damage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))

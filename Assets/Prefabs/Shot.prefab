@@ -215,7 +215,7 @@ MonoBehaviour:
   mousePos: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   clickPos: {x: 0, y: 0, z: 0}
-  speed: 5
+  speed: 7
   damage: 1
 --- !u!212 &212927922408776202
 SpriteRenderer:

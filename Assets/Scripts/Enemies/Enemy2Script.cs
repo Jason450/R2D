@@ -31,7 +31,7 @@ public class Enemy2Script : MonoBehaviour
     {
         if (canMove)
         {
-            speed += 0.1f * Time.deltaTime;
+            //speed += 0.1f * Time.deltaTime;
             enemyPos.x -= speed * Time.deltaTime;
             enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
         }
