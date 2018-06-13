@@ -101,6 +101,7 @@ public class PositionEasingNoLoop : MonoBehaviour
                 if(currentTime > timeDuration)
                 {
                     Debug.Log("EL EASING HA TERMINADO JUSTO AHORA");
+                    transform.localPosition = finalValue;
                 }
             }
             else

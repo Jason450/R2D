@@ -27,11 +27,15 @@ public class PlayerShot : MonoBehaviour
     {
         this.transform.Translate(new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime);
 
-        if (shot.localPosition.x >= 10)
+        if (shot.localPosition.x >= 9)
         {
             Destroy(this.gameObject);
         }
         if (shot.localPosition.y >= 5)
+        {
+            Destroy(this.gameObject);
+        }
+        if (player.life <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -42,7 +46,7 @@ public class PlayerShot : MonoBehaviour
         Debug.Log("shot connect" + collision.name);
         if (collision.gameObject.tag == "Enemy01")
         {
-            collision.gameObject.GetComponent<EnemyScript>().RecieveDamage(damage);
+            //collision.gameObject.GetComponent<EnemyScript>().RecieveDamage(damage);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Enemy02")

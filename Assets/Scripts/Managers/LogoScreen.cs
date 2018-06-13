@@ -12,7 +12,7 @@ public class LogoScreen : MonoBehaviour
 
 	void Start ()
     {
-        counter = 3;
+        counter = 7;
         image.color = new Vector4(image.color.r, image.color.g, image.color.b, image.color.a);
     }
 

@@ -7,22 +7,26 @@ public class BossScript : MonoBehaviour
     public enum BossState { Inactive, Active, Charge, Attack, Dead }
     public BossState currentBossState;
 
-    public GameObject bigSplash;
+    public PlayerScript player;
     public ScoreScript scoreScript;
+    public GameObject bigSplash;
     public Animator anim;
+    public AudioSource charge;
+    public AudioSource attack;
 
     public int maxLife;
     public int life;
     public int damage = 1;
     public int scoreValue = 500;
     public int random;
+    public float randomCounter = 1;
     public float chargeCounter;
     public float appearSpeed;
     public float activeSpeed;
     public float attackSpeed;
     public bool active;
 
-    public Transform player;
+    //public Transform player;
     public Vector2 playerPos;
     public Vector2 direction;
 
@@ -60,12 +64,29 @@ public class BossScript : MonoBehaviour
     {
         Debug.Log("boss damaged?");
         life -= damage;
-        if (life == 0)
+        if (life <= 0)
         {
-            //Instantiate(bigSplash, new Vector3(this.transform.position.x, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
+            Instantiate(bigSplash, new Vector3(this.transform.position.x, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
             scoreScript.UpdateScore(scoreValue);
-            Dead();
+            DeadState();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("collided");
+        if (collision.gameObject.tag == "Player")
+        {
+            player.RecieveDamage(damage);
+            Reset();
+        }
+    }
+
+    public void Reset()
+    {
+        active = false;
+        life = maxLife;
+        InactiveState();
     }
 
     #region Updates
@@ -95,21 +116,19 @@ public class BossScript : MonoBehaviour
         if (this.transform.localPosition.y <= -1) activeSpeed *= -1;
         if (this.transform.localPosition.y >= 3) activeSpeed *= -1;
 
-        random = Random.Range(1, 6000);
-        Debug.Log("randomizing");
-        if (random <= 35)
+        randomCounter -= Time.deltaTime;
+        
+        if (randomCounter <= 0)
         {
-            Debug.Log("strike");
-            ChargeState();
+            randomCounter = 1;
+            random = Random.Range(1, 100);
+            Debug.Log("randomizing");
+            if (random <= 35)
+            {
+                Debug.Log("strike");
+                ChargeState();
+            }
         }
-        //if (this.transform.localPosition.y >= -1)
-        //{
-        //    this.transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y + Time.deltaTime * activeSpeed, 0);
-        //}
-        //if (this.transform.localPosition.y >= 3)
-        //{
-        //    this.transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y - Time.deltaTime * activeSpeed, 0);
-        //}
     }
 
     void Charge()
@@ -157,12 +176,14 @@ public class BossScript : MonoBehaviour
 
     public void ChargeState()
     {
+        charge.Play();
         anim.SetTrigger("Charge");
         currentBossState = BossState.Charge;
     }
 
     public void AttackState()
     {
+        attack.Play();
         anim.SetTrigger("Attack");
         currentBossState = BossState.Attack;
     }

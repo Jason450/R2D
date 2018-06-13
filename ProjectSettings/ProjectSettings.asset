@@ -11,10 +11,10 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Jason Chiew
-  productName: 2D Game
-  defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  companyName: 2C Jason Chiew
+  productName: Wasabi Shot
+  defaultCursor: {fileID: 2800000, guid: 02d92f42ea7a4c643a0ed0a00257dfad, type: 3}
+  cursorHotspot: {x: 16, y: 16}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
@@ -240,7 +240,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5249adf9ebada4e46bbfaf14ee155772, type: 3}
+      m_Icon: {fileID: 2800000, guid: 2a047ac800fad2a4d89849ed64444493, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

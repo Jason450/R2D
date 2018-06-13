@@ -47,13 +47,13 @@ public class BounceGroup : MonoBehaviour
                 transf.localPosition = new Vector3(this.gameObject.transform.localPosition.x, end, 0);
             }
         }
-        else
-        {
-            if (transf.localPosition.y >= 1000)
-            {
-                this.gameObject.SetActive(false);
-            }
-        }
+        //else
+        //{
+        //    if (transf.localPosition.y >= 1000)
+        //    {
+        //        this.gameObject.SetActive(false);
+        //    }
+        //}
     }
 
     public bool Active { set { active = value; } }

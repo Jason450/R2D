@@ -38,15 +38,15 @@ public class PlayerScript : MonoBehaviour
         //    lvlManager.FinishLevel();
         //}
 
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            rb.gravityScale = 4;
-        }
+        //if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        //{
+        //    rb.gravityScale = 4;
+        //}
         
-        if (collisions.isGrounded)
-        {
-            rb.gravityScale = 2;
-        }
+        //if (collisions.isGrounded)
+        //{
+        //    rb.gravityScale = 2;
+        //}
     }
 
     private void FixedUpdate()

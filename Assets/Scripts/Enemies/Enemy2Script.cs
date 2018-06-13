@@ -33,8 +33,8 @@ public class Enemy2Script : MonoBehaviour
         {
             //speed += 0.1f * Time.deltaTime;
             enemyPos.x -= speed * Time.deltaTime;
-            enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
         }
+        enemy.position = new Vector3(enemyPos.x, enemyPos.y, 0);
 
         if (enemyPos.x <= -10)
         {
@@ -59,7 +59,7 @@ public class Enemy2Script : MonoBehaviour
     {
         Debug.Log("enemy2 damaged?");
         life -= damage;
-        if (life == 0)
+        if (life <= 0)
         {
             Instantiate(splash, new Vector3(this.transform.position.x, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
             scoreScript.UpdateScore(scoreValue);

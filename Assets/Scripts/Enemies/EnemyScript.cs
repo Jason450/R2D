@@ -58,7 +58,7 @@ public class EnemyScript : MonoBehaviour
     {
         Debug.Log("enemy damaged?");
         life -= damage;
-        if (life == 0)
+        if (life <= 0)
         {
             Instantiate(splash, new Vector3(this.transform.position.x, this.transform.position.y, 0), new Quaternion(0, 0, 0, 0));
             scoreScript.UpdateScore(scoreValue);
