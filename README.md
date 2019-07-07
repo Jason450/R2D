@@ -1,12 +1,10 @@
-# The Way
+# Wasabi Shot
 
-* 2D Game Infinite Runner
+* 2D Game Infinite Runner-Shooter
 
 * Gameplay Controls:
-  * Up/Space: Jump
-  * Down/S: Fall Faster
+  * Space: Jump
+  * Left Click: Shot
   * P: Pause
-
-* Gameplay speed increases while playing 
-
+  
 * Team Members: Jason Chiew
